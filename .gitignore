@@ -1,0 +1,6 @@
+build/
+nbprojext/
+test/
+*.mf
+*.xml
+*.properties
