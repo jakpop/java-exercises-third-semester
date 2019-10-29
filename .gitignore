@@ -4,3 +4,7 @@ test/
 *.mf
 *.xml
 *.properties
+/arrays/zad1/nbproject/private/
+/arrays/zad2/nbproject/private/
+/arrays/zad3/nbproject/private/
+/arrays/zad4/nbproject/private/
