@@ -190,11 +190,11 @@ public class Zad7 {
 
         //zad. 7c
 //        String word = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the "; 
-//        String word2 = "aa bb cc";
+//        String word2 = "aa bb cc dd";
 //        Fill2DArrayWithLetters(word);
 
         //zad. 7d
-        MatrixDivision();
+//        MatrixDivision();
     }
     
 }
