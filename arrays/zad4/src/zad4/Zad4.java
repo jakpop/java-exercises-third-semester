@@ -19,7 +19,7 @@ public class Zad4 {
         
         for (int i = 0; i < n; i++)
         {
-            arr[i] = rand.nextInt(11) - 5;
+            arr[i] = rand.nextDouble()*10 - 5;
         }
         return arr;
     }
