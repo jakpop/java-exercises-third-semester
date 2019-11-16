@@ -98,10 +98,21 @@ public class Zad7 {
     //zad. 7c
     public static void Fill2DArrayWithLetters(String wordInput)
     {
-        char[][] arrayOfChars = new char[wordInput.length()/10 + 1][10];
+        char[][] array2D;
+        
+        //stwórz tablicę 2D o liczbie wierszy w zależności czy (liczba znaków)%10 == 0 
+        if (wordInput.length() % 10 == 0)
+        {
+            array2D = new char[wordInput.length()/10][10];
+        }
+        else
+        {
+            array2D = new char[wordInput.length()/10 + 1][10];
+        }
+        
         int count = 0;
         
-        for (int i = 0; i < arrayOfChars.length; i++)
+        for (int i = 0; i < array2D.length; i++)
         {
             if (wordInput.length() < 16)
             {
@@ -109,18 +120,18 @@ public class Zad7 {
                 break;
             }
             
-            for (int j = 0; j < arrayOfChars[1].length; j++)
+            for (int j = 0; j < array2D[1].length; j++)
             {
                 if (count < wordInput.length())
                 {
-                    arrayOfChars[i][j] = wordInput.charAt(count);
+                    array2D[i][j] = wordInput.charAt(count);
                     count++;
-                    System.out.print(arrayOfChars[i][j]);
+                    System.out.print(array2D[i][j]);
                 }
                 else
                 {
-                    arrayOfChars[i][j] = '0';
-                    System.out.print(arrayOfChars[i][j]);
+                    array2D[i][j] = '0';
+                    System.out.print(array2D[i][j]);
                 }
             }
             
@@ -189,9 +200,10 @@ public class Zad7 {
 //        Vowels();
 
         //zad. 7c
-//        String word = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the "; 
-//        String word2 = "aa bb cc dd";
-//        Fill2DArrayWithLetters(word);
+        String word = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the "; 
+        String word2 = "aa bb cc dd";
+        String word3 = "qwertyuiopasdfghjklz"; //20-znakowy łańuch (20%10 = 0)
+        Fill2DArrayWithLetters(word);
 
         //zad. 7d
 //        MatrixDivision();
