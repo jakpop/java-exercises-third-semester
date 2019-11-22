@@ -71,7 +71,7 @@ public class Zad7 {
         
         for (int i = 0; i < array2D.length; i++)
         {
-            for (int j = 0; j < array2D[i].length; j++)
+            for (int j = 0; j < array2D[1].length; j++)
             {
                 array2D[i][j] = rand.nextInt(26) + 97;
                 System.out.print((char)array2D[i][j] + " ");
@@ -197,13 +197,13 @@ public class Zad7 {
 //        MatrixSum();
 
         //zad. 7b
-//        Vowels();
+        Vowels();
 
         //zad. 7c
-        String word = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the "; 
-        String word2 = "aa bb cc dd";
-        String word3 = "qwertyuiopasdfghjklz"; //20-znakowy łańuch (20%10 = 0)
-        Fill2DArrayWithLetters(word);
+//        String word = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the "; 
+//        String word2 = "aa bb cc dd";
+//        String word3 = "qwertyuiopasdfghjklz"; //20-znakowy łańuch (20%10 = 0)
+//        Fill2DArrayWithLetters("xd dx XD DX wewewewewewewewewewe");
 
         //zad. 7d
 //        MatrixDivision();
