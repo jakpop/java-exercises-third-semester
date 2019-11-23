@@ -21,18 +21,33 @@ public class Kolos2 {
         
         for (int i = 0; i < (lan1.length() + lan2.length()); i++)
         {
-            if (i%2 == 0)
+            if (lan1.length() == lan2.length())
             {
-                lan3 += lan1.charAt(lan1Index);
-                lan1Index++;
-                count++;
+                if (i%2 == 0)
+                {
+                    lan3 += lan1.charAt(lan1Index);
+                    lan1Index++;
+                }
+                else
+                {
+                    lan3 += lan2.charAt(lan2Index);
+                    lan2Index++;
+                }
             }
-            else
+            else if (lan1.length() > lan2.length())
             {
-                lan3 += lan2.charAt(lan2Index);
-                lan2Index++;
-                count++;
+                if (i%2 == 0)
+                {
+                    lan3 += lan1.charAt(lan1Index);
+                    lan1Index++;
+                }
+                else
+                {
+                    lan3 += lan2.charAt(lan2Index);
+                    lan2Index++;
+                }
             }
+            
         }
         return lan3;
     }

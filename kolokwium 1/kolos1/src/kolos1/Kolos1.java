@@ -13,10 +13,14 @@ public class Kolos1 {
 
     public static boolean By3Division(int liczba)
     {
-        boolean wynik = false;
         String liczbaString = Integer.toString(liczba);
         int[] array = new int[liczbaString.length()];
         int suma = 0;
+        
+        if (liczba == 0)
+        {
+            return false;
+        }
         
         for (int i = 0; i < liczbaString.length(); i++)
         {
@@ -27,14 +31,12 @@ public class Kolos1 {
         if (suma <= 9)
         {
             if (suma == 9 || suma == 6 || suma == 3 || suma == 0)
-                wynik = true;
+                return true;
             else
-                wynik = false;
+                return false;
         }
         else
-            wynik = By3Division(suma);
-        
-        return wynik;
+            return By3Division(suma);
     }
     public static void main(String[] args) {
         System.out.println(By3Division(30));
