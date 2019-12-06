@@ -41,7 +41,7 @@ public class Main {
         //zad. 5
         Random rand = new Random();
         
-        String[] imiona = { "Andrzej", "Bartosz", "Czesław", "Damian", "Eryk", "Fjerzy", "Grzegorz", "Henryk", "Ireneusz", "Jakub", "Krzysztof" };
+        String[] imiona = { "Aneta", "Bartosz", "Celina", "Damian", "Ela", "Fjerzy", "Grzegorz", "Hanna", "Ireneusz", "Jolanta", "Krzysztof" };
         String[] stanowiska = { "młodszy specjalista", "starszy specjalista", "księgowy", "manager", "kierownik" };
         String[] stanowiska2 = { "młodszy specjalista", "starszy specjalista", "księgowy", };
         
@@ -49,7 +49,7 @@ public class Main {
         
         int countKierownik = 0;
         int countManager = 0;
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < arrayPracownik.length; i++)
         {
             arrayPracownik[i] = new Pracownik(imiona[rand.nextInt(imiona.length)], Pracownik.randomSurname(), stanowiska[rand.nextInt(stanowiska.length)], rand.nextInt(26));
             
@@ -77,7 +77,8 @@ public class Main {
         //zad. 6
         Pracownik.Ranking(arrayPracownik, 0);
 	System.out.println("\nsorted:");
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < arrayPracownik.length; i++) 
+	{
             System.out.println(arrayPracownik[i].getImie() + " " + arrayPracownik[i].getNazwisko() + " " + arrayPracownik[i].getPensja() + " " + arrayPracownik[i].getStanowisko() + " " + arrayPracownik[i].getStazPracy());
         }
 	

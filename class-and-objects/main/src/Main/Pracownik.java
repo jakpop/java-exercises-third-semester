@@ -123,7 +123,7 @@ public class Pracownik {
     /* ZADANIE 5 */
     public static Random rand = new Random();
     
-    public static String surname = "";
+    public static String surname;
     public static String randomSurname()
     {
         surname = "";
@@ -139,43 +139,18 @@ public class Pracownik {
     }
     
     /* ZADANIE 6 */
-    public static Comparator<Pracownik> nazwiskoComparator = new Comparator<Pracownik>() {
-        @Override
-        public int compare(Pracownik a, Pracownik b) 
-	{
-            return a.nazwisko.compareTo(b.nazwisko);
-        }
-    };
-    
-    String s_Pensja = String.valueOf(getPensja());
-    
-    public static int compareName(Pracownik a, Pracownik b)
-    {
-	return a.getImie().compareTo(b.getImie());
-    }
-    
-    public static int comparePosotion(Pracownik a, Pracownik b)
-    {
-	return a.stanowisko.compareTo(b.stanowisko);
-    }
-    
-    public static int compareSalary(Pracownik a, Pracownik b)
-    {
-	return a.s_Pensja.compareTo(b.s_Pensja);
-    }
-    
     public static void Ranking(Pracownik[] firma, int klucz) 
     {
         switch (klucz) 
         {
             case 0:
-                Arrays.sort(firma, nazwiskoComparator);
+                Arrays.sort(firma, Comparator.comparing(Pracownik::getNazwisko));
                 break;
             case 1:
-                Arrays.sort(firma, Pracownik::comparePosotion);
+                Arrays.sort(firma, Comparator.comparing(Pracownik::getStanowisko));
                 break;
             case 2:
-                Arrays.sort(firma, Pracownik::compareSalary);
+                Arrays.sort(firma, Comparator.comparing(Pracownik::getPensja));
                 break;
         }
     }
