@@ -5,6 +5,7 @@
  */
 package zad2;
 import java.io.*;
+import java.util.Random;
 
 /**
  *
@@ -12,41 +13,55 @@ import java.io.*;
  */
 public class Zad2 {
 
-    public static void writeToRandomAccesFile(String fileName, int position, double[] doubleArray) throws Exception
+    public static void writeToRandomAccesFile(String fileName) throws Exception
     {
 	try
 	{
 	    RandomAccessFile rafFile = new RandomAccessFile(fileName, "rw");
+	    Random rand = new Random();
 	    
-	    
-	    rafFile.seek(position);				//ustawia pointer na wybranej pozycji
-	    for (int i = 0; i < doubleArray.length; i++) {	//wpisuje dane do pliku
-		rafFile.writeDouble(doubleArray[i]);
+	    for (int i = 0; i < 20; i++) {	//wpisuje dane do pliku
+		rafFile.seek(rafFile.getFilePointer() );
+		rafFile.writeInt(rand.nextInt(101) + 50);
+		System.out.println(rafFile.readInt());
 	    }
+	    System.out.println("");
+	    
 	    rafFile.close();
 	}
-	catch (IOException e)
-	{
+	catch (FileNotFoundException e) {
+	    e.printStackTrace();
+	}
+	catch (IOException e) {
 	    e.printStackTrace();
 	}
     }
     
-    public static void readFromrandomAccesFile(String fileName, int position) throws Exception
+    public static void readFromRandomAccesFile(String fileName) throws Exception
     {
 	try
 	{
 	    RandomAccessFile rafFile = new RandomAccessFile(fileName, "rw");
 	    
-	    rafFile.seek(position);
-	    System.out.println(rafFile.readDouble());
+	    for (int i = 0; i < 20; i++) {
+		int a = rafFile.readUnsignedByte();
+		rafFile.seek(0);
+		rafFile.writeInt(a + 1);
+		System.out.println(a);
+	    }
 	    rafFile.close();
 	}
-	catch (IOException e)
-	{
+	catch (FileNotFoundException e) {
+	    e.printStackTrace();
+	}
+	catch (IOException e) {
 	    e.printStackTrace();
 	}
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
+	
+	writeToRandomAccesFile("raffile.txt");
+	readFromRandomAccesFile("raffile.txt");
     }
     
 }
