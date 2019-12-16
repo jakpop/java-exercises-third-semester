@@ -17,17 +17,17 @@ public class Zad2 {
     {
 	try
 	{
-	    RandomAccessFile rafFile = new RandomAccessFile(fileName, "rw");
+	    RandomAccessFile raf = new RandomAccessFile(fileName, "rw");
 	    Random rand = new Random();
 	    
+	    raf.seek(0);
 	    for (int i = 0; i < 20; i++) {	//wpisuje dane do pliku
-		rafFile.seek(rafFile.getFilePointer() );
-		rafFile.writeInt(rand.nextInt(101) + 50);
-		System.out.println(rafFile.readInt());
+		raf.write(rand.nextInt(101) + 50);
+		System.out.println(raf.readInt());
 	    }
 	    System.out.println("");
 	    
-	    rafFile.close();
+	    raf.close();
 	}
 	catch (FileNotFoundException e) {
 	    e.printStackTrace();
@@ -41,15 +41,15 @@ public class Zad2 {
     {
 	try
 	{
-	    RandomAccessFile rafFile = new RandomAccessFile(fileName, "rw");
+	    RandomAccessFile raf = new RandomAccessFile(fileName, "rw");
 	    
+	    raf.seek(0);
 	    for (int i = 0; i < 20; i++) {
-		int a = rafFile.readUnsignedByte();
-		rafFile.seek(0);
-		rafFile.writeInt(a + 1);
-		System.out.println(a);
+		int a = raf.readInt();
+		raf.writeInt(a + 1);
+		System.out.println(raf.readInt());
 	    }
-	    rafFile.close();
+	    raf.close();
 	}
 	catch (FileNotFoundException e) {
 	    e.printStackTrace();
@@ -60,8 +60,8 @@ public class Zad2 {
     }
     public static void main(String[] args) throws Exception {
 	
-	writeToRandomAccesFile("raffile.txt");
-	readFromRandomAccesFile("raffile.txt");
+	writeToRandomAccesFile("raf.txt");
+	readFromRandomAccesFile("raf.txt");
     }
     
 }

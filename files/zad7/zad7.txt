@@ -1,0 +1,10 @@
+Kwadrat liczby 1 wynosi 1.0
+Kwadrat liczby 2 wynosi 4.0
+Kwadrat liczby 3 wynosi 9.0
+Kwadrat liczby 4 wynosi 16.0
+Kwadrat liczby 5 wynosi 25.0
+Kwadrat liczby 6 wynosi 36.0
+Kwadrat liczby 7 wynosi 49.0
+Kwadrat liczby 8 wynosi 64.0
+Kwadrat liczby 9 wynosi 81.0
+Kwadrat liczby 10 wynosi 100.0

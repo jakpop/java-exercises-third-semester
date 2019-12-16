@@ -89,7 +89,7 @@ public class Lekarstwa implements Serializable {
 	Lekarstwa[] lekArray = {lek1, lek2, lek3, lek4};
 	Obsluga.zapiszDoPlikuTablice(lekArray, "lek.dat");
 	Obsluga.zapiszMniejNiz10(lekArray, "nowe.dat");
-	Obsluga.wypiszDanezPliku("nowe.dat");
+//	Obsluga.wypiszDanezPliku("nowe.dat");
 	
     }
 }
