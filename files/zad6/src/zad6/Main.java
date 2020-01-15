@@ -15,7 +15,7 @@ import java.util.Random;
  *
  * @author pc
  */
-public class Zad6 {
+public class Main {
 
     public static void writeToRandomAccesFile(String fileName, House[] houses) throws Exception
     {

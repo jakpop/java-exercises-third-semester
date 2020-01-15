@@ -16,12 +16,12 @@ import java.io.FileWriter;
  */
 public class Zad7 {
 
-    public static void zapiszKwadraty(int poczatek, int koniec, String fileName) throws Exception {
+    public static void zapiszKwadraty(int start, int end, String fileName) throws Exception {
 	BufferedWriter bw = new BufferedWriter(new FileWriter(fileName));
 	
-	for (int i = poczatek; i <= koniec; i++) {
-	    bw.write(String.format("Kwadrat liczby %s wynosi %s\n", poczatek, Math.pow(poczatek, 2)));
-	    poczatek++;    
+	for (int i = start; i <= end; i++) {
+	    bw.write(String.format("Kwadrat liczby %s wynosi %s\n", start, Math.pow(start, 2)));
+	    start++;    
 	}
 	bw.close();
     }
